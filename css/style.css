@@ -1,0 +1,74 @@
+/*   .highlight .webix_column>div:nth-child(even){
+    background-color:#f7f7b4
+}
+.highlight .webix_column>div:nth-child(odd){
+    background-color:#eeeee8;
+}   */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../webix/webix7.0.3/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf');
+    /* src: url('fonts/nexa_light-webfont.eot?#iefix') format('embedded-opentype'), 
+         url('fonts/nexa_light-webfont.woff') format('woff'),
+         url('fonts/nexa_light-webfont.ttf') format('truetype'),
+         url('fonts/nexa_light-webfont.svg#nexa_lightregular') format('svg'); */
+/* font-weight: normal; */
+/* font-style: normal; */
+}
+html {
+    font-family: 'Open Sans' !important;
+}
+.webix_toolbar .webix_el_label .webix_el_box {
+    font-family: 'Open Sans' !important;
+}
+.webix_inp_label, .webix_inp_top_label, legend.webix_forminput_label, .webix_el_label .webix_el_box {
+    font-family: 'Open Sans' !important;
+}
+
+.webix_column .webix_row_select {
+    background-color:#f7f6d4 !important;      
+}
+
+.webix_table_checkbox{
+    pointer-events: none;
+}
+
+button.fc-addButton-button.fc-button.fc-button-primary.fc-addButton-button {
+    background-color: #0097cc !important;
+    border-color: #0097cc !important
+}
+.fc-h-event{
+    background-color: #0097cc !important;
+}
+
+
+.webix_el_box .webix_disabled_box textarea {
+    background-color:#fcfcfc !important;
+}
+.webix_inp_label, .webix_disabled_box .webix_inp_static{
+    color: #475466 !important
+}
+div[view_id="labelShowEvent"], div[view_id = "labelAddEvent"] {
+    padding-left: 48%
+}
+.fc-prev-button,.fc-next-button  {
+    background-color: #0097cc !important;
+    border-color: #0097cc !important;
+}
+.fc-today-button {
+    background-color: #04AA6D !important;
+    border-color: #04AA6D !important;
+}
+.webix_view.webix_control.webix_el_label, div[view_id="sidebarMenuIcon"] {
+    background-color: #04A96D;
+}
+.webix_view.webix_control.webix_el_label > div, .webix_view.webix_control.webix_el_icon button span {
+    color: white;
+}
+.webix_icon_button:hover:before {
+    background-color: unset !important;
+}
+
+.highlight{
+    background-color:#FFAAAA;
+}
