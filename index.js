@@ -204,12 +204,12 @@ const grid = {
   css: 'webix_header_border webix_data_border highlight',
   columns: [
     { id: 'sourceId', header: 'ID', width: 150, editor: 'text' },
-    { id: 'feedUrl', editor: 'text', header: 'URL', fillspace: true },
+    { id: 'feedUrl', editor: 'text', header: 'Feed URL', fillspace: true },
     {
       id: 'websiteUrl',
       editor: 'text',
       editor: 'text',
-      header: 'Host Name',
+      header: 'Website URL',
       width: 200,
     },
     {
