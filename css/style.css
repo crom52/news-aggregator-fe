@@ -59,16 +59,15 @@ div[view_id="labelShowEvent"], div[view_id = "labelAddEvent"] {
     background-color: #04AA6D !important;
     border-color: #04AA6D !important;
 }
-.webix_view.webix_control.webix_el_label, div[view_id="sidebarMenuIcon"] {
+/* .webix_view.webix_control.webix_el_label, div[view_id="sidebarMenuIcon"] {
     background-color: #04A96D;
-}
-.webix_view.webix_control.webix_el_label > div, .webix_view.webix_control.webix_el_icon button span {
+} */
+/* .webix_view.webix_control.webix_el_label > div, .webix_view.webix_control.webix_el_icon button span {
     color: white;
-}
+} */
 .webix_icon_button:hover:before {
     background-color: unset !important;
 }
-
-.highlight{
-    background-color:#FFAAAA;
+div[view_id= "count"] input{
+    border: none !important
 }

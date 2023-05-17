@@ -51,6 +51,7 @@ const multiAddLayout = {
                     0
                   );
                   $$('grid').select($$('grid').getFirstId());
+                  setTotal();
                 }
               });
             },
@@ -149,9 +150,21 @@ const toolbar = {
               });
               if (confirm) {
                 //call api remove
+                setTotal();
               }
             },
           },
+        },
+        { width: 30 },
+        {
+          id: 'count',
+          view: 'text',
+          label: 'Total',
+          labelWidth: 60,
+          width: 200,
+          value: '100',
+          readonly: true,
+          width: 125,
         },
       ],
     },
@@ -167,7 +180,10 @@ const grid = {
       }
     },
     onAfterLoad: () => {
+      const first = $$('grid').getFirstId();
+      if (!first) return;
       $$('grid').select($$('grid').getFirstId());
+      setTotal();
     },
   },
   scrollY: true,
@@ -190,7 +206,7 @@ const grid = {
       id: 'hostName',
       editor: 'text',
       editor: 'text',
-      header: 'hostName',
+      header: 'Host Name',
       width: 200,
     },
     {
@@ -289,3 +305,7 @@ webix.ready(function () {
     rows: [multiAddLayout, toolbar, layoutGrid],
   });
 });
+
+const setTotal = () => {
+  $$('count').setValue($$('grid').serialize().length);
+};
