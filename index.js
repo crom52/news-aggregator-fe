@@ -113,14 +113,18 @@ const toolbar = {
               if (saveData.length == 0) {
                 return;
               }
-              let confirm = await webix.confirm({
-                ok: 'Yes',
-                cancel: 'No',
-                text: 'Do you want to save ?',
-              });
-              if (confirm) {
-                //call api to save data;
-              }
+              let confirm = webix
+                .confirm({
+                  ok: 'Yes',
+                  cancel: 'No',
+                  text: 'Do you want to save ?',
+                })
+                .then(function () {
+                  //call api to save data;
+                })
+                .fail(function () {
+                  return;
+                });
             },
           },
         },
@@ -131,7 +135,7 @@ const toolbar = {
           width: 100,
           align: 'right',
           on: {
-            onItemClick: async () => {
+            onItemClick: () => {
               const removeData = $$('grid').getSelectedItem();
               const multi = Array.isArray(removeData);
               let text;
@@ -143,15 +147,19 @@ const toolbar = {
                 removeData.feedUrl.length > 0 ? removeData : null;
               }
               if (!removeData) return;
-              let confirm = await webix.confirm({
-                ok: 'Yes',
-                cancel: 'No',
-                text: text,
-              });
-              if (confirm) {
-                //call api remove
-                setTotal();
-              }
+              let confirm = webix
+                .confirm({
+                  ok: 'Yes',
+                  cancel: 'No',
+                  text: text,
+                })
+                .then(function () {
+                  //call api remove
+                  setTotal();
+                })
+                .fail(function () {
+                  return;
+                });
             },
           },
         },
