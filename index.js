@@ -113,7 +113,7 @@ const toolbar = {
               if (saveData.length == 0) {
                 return;
               }
-              let confirm = webix
+              webix
                 .confirm({
                   ok: 'Yes',
                   cancel: 'No',
@@ -136,7 +136,7 @@ const toolbar = {
           align: 'right',
           on: {
             onItemClick: () => {
-              const removeData = $$('grid').getSelectedItem();
+              let removeData = $$('grid').getSelectedItem();
               const multi = Array.isArray(removeData);
               let text;
               if (multi) {
@@ -147,7 +147,7 @@ const toolbar = {
                 removeData.feedUrl.length > 0 ? removeData : null;
               }
               if (!removeData) return;
-              let confirm = webix
+              webix
                 .confirm({
                   ok: 'Yes',
                   cancel: 'No',
