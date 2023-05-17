@@ -31,13 +31,13 @@ const multiAddLayout = {
                 return;
               }
               const urls = urlValue.split(/\r?\n|\r|\n/g);
-              [...new Set(urls)].forEach((url) => {
+              [...new Set(urls)].forEach((u) => {
                 var exists = $$('grid')
                   .serialize()
-                  .find((e) => e.url == url);
+                  .find((e) => e.feedUrl == u);
                 if (!exists) {
                   try {
-                    var url = new URL(url);
+                    var url = new URL(u);
                   } catch (error) {
                     webix.message(error.toString(), 'error');
                     return;
@@ -45,8 +45,8 @@ const multiAddLayout = {
                   $$('grid').add(
                     {
                       upsertFlg: true,
-                      url: url,
-                      hostName: new URL(url).hostname,
+                      feedUrl: u,
+                      websiteUrl: url.hostname,
                     },
                     0
                   );
@@ -137,10 +137,10 @@ const toolbar = {
               let text;
               if (multi) {
                 text = `Do you want to remove ${removeData.length} items ?`;
-                removeData = removeData.filter((e) => e.url.length > 0);
+                removeData = removeData.filter((e) => e.feedUrl.length > 0);
               } else {
                 text = 'Do you want to remove this item ?';
-                removeData.url.length > 0 ? removeData : null;
+                removeData.feedUrl.length > 0 ? removeData : null;
               }
               if (!removeData) return;
               let confirm = await webix.confirm({
@@ -193,17 +193,12 @@ const grid = {
   select: 'row',
   editable: true,
   editaction: 'dblclick',
-  scheme: {
-    $change: function (item) {
-      if (item.hostName == 'A') item.$css = 'highlight';
-    },
-  },
   css: 'webix_header_border webix_data_border highlight',
   columns: [
     { id: 'sourceId', header: 'ID', width: 150, editor: 'text' },
-    { id: 'url', editor: 'text', header: 'URL', fillspace: true },
+    { id: 'feedUrl', editor: 'text', header: 'URL', fillspace: true },
     {
-      id: 'hostName',
+      id: 'websiteUrl',
       editor: 'text',
       editor: 'text',
       header: 'Host Name',
@@ -224,71 +219,71 @@ const grid = {
   data: [
     {
       sourceId: 1,
-      url: 'John Doe',
-      hostName: 'A',
+      feedUrl: 'John Doe',
+      websiteUrl: 'A',
       note: '555-555-1234',
       type: 'Student',
     },
     {
       sourceId: 2,
-      url: 'Jane Doe',
-      hostName: 'B',
+      feedUrl: 'Jane Doe',
+      websiteUrl: 'B',
       note: '555-555-5678',
       type: 'Teacher',
     },
     {
       sourceId: 3,
-      url: 'James Smith',
-      hostName: 'C',
+      feedUrl: 'James Smith',
+      websiteUrl: 'C',
       note: '555-555-9012',
       type: 'Student',
     },
     {
       sourceId: 4,
-      url: 'Emily Johnson',
-      hostName: 'A',
+      feedUrl: 'Emily Johnson',
+      websiteUrl: 'A',
       note: '555-555-3456',
       type: 'Teacher',
     },
     {
       sourceId: 5,
-      url: 'William Brown',
-      hostName: 'B',
+      feedUrl: 'William Brown',
+      websiteUrl: 'B',
       note: '555-555-7890',
       type: 'Student',
     },
     {
       sourceId: 6,
-      url: 'Michael Davis',
-      hostName: 'A',
+      feedUrl: 'Michael Davis',
+      websiteUrl: 'A',
       note: '555-555-2345',
       type: 'Teacher',
     },
     {
       sourceId: 7,
-      url: 'Sarah Wilson',
-      hostName: 'C',
+      feedUrl: 'Sarah Wilson',
+      websiteUrl: 'C',
       note: '555-555-6789',
       type: 'Student',
     },
     {
       sourceId: 8,
-      url: 'David Jones',
-      hostName: 'B',
+      feedUrl: 'David Jones',
+      websiteUrl: 'B',
       note: '555-555-0123',
       type: 'Teacher',
     },
     {
       sourceId: 9,
-      url: 'Jessica Lee',
-      hostName: 'A',
+      feedUrl: 'Jessica Lee',
+      websiteUrl: 'A',
       note: '555-555-4567',
       type: 'Student',
     },
     {
       sourceId: 10,
-      url: 'Christopher Wilson',
-      hostName: 'C',
+      feedUrl: 'Christopher Wilson',
+      websiteUrl: 'C',
       note: '555-555-8901',
       type: 'Teacher',
     },
