@@ -3,13 +3,13 @@ let menuList = [
   {
     icon: 'mdi mdi-view-dashboard',
     id: 'layoutFeedUrlGrid',
-    value: 'Data Tables',
+    value: 'URL Source Management',
     data: [],
   },
   {
     id: 'feedContentGrid',
     icon: 'mdi mdi-table',
-    value: 'Dashboards',
+    value: 'Feed Management',
     data: [],
   },
 ];
@@ -107,8 +107,6 @@ webix.ready(function () {
     ],
   });
 });
-
-
 
 const setTotal = () => {
   $$('count').setValue($$('grid').serialize().length);
