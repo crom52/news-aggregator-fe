@@ -22,9 +22,9 @@ const FeedContentGid = (() => {
       { id: 'content', editor: 'text', header: 'Content', width: 200 },
       { id: 'websiteUrl', editor: 'text', header: 'Title', width: 200 },
       {
-        header: 'Manual Edit',
+        header: 'Edit',
         template: `<span class='webix_icon fa fa-cog''></span>`,
-        width: 60,
+        width: 50,
       },
     ],
     data: [
